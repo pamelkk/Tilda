@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Магазин</title>
+  <link href="css/min.css" rel="stylesheet">
+  <link rel="preload" href="fonts/BebasNeueBold.woff" as="font">
+</head>
+
+<body>
+  <header class="page-header">
+    <a title="Our logo" href="#">
+      <img src="img/logo.jpg" width="430" height="130" alt="Our logo">
+    </a>
+    <a class="page-header-cart" href="#" title="Your cart">Cart 0</a>
+  </header>
+  <main class="page-main">
+    <h1 class="visually-hidden">Our catalog</h1>
+    <nav class="page-main__nav">
+      <ul>
+        <li><a href="#">About shop</a></li>
+        <li><a href="#">Goods</a></li>
+        <li class="page-main__nav-best"><a href="https://hh.ru/resume/0de59b06ff03e106890039ed1f696752775a64">Bestseller</a></li>
+      </ul>
+    </nav>
+    <section class="page-main__product">
+      <h2 class="visually-hidden">Product Card</h2>
+      <button type="button" id="start" onclick="openModal()">Add to cart</button>
+      <div class="page-main__product-arrow">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <h3>Наши контакты</h3>
+    <a href="mailto:nuraevairina@yandex.ru">Mail only for positive feedback</a>
+    <a href="tel:89255261340">+7 (925)-526-13-40</a>
+  </footer>
+  <template id="card">
+    <article class="product">
+
+      <div class="product__info">
+        <h3 class="product__title">Title</h3>
+        <p class="product__descr">descr</p>
+        <p class="product__price">price</p>
+        <p class="product__priceold">oldprice</p>
+        <p class="product__quantity">quantity</p>
+      </div>
+      <div class="product__photos">
+        <div class="product__photos-focus">
+          <img id="big">
+        </div>
+        <div class="product__photos-mini">
+        </div>
+      </div>
+    </article>
+  </template>
+  <section class="popup">
+    <div class="popup__wrapper">
+      <h4 class="visually-hidden">"Items already in the cart" popup</h4>
+      <p>Item was successfully added to cart!</p>
+    </div>
+  </section>
+  <section class="popup-awesome">
+    <div class="popup-awesome__wrapper">
+      <h4 class="visually-hidden">"Good rating" popup</h4>
+      <p>Thanks for the good rating!</p>
+    </div>
+  </section>
+  <div class="rating">
+    <h5>High five!<span> Rate our shop</span></h5>
+    <div class="rating__wrapper">
+      <div class="rating__wrapper-item active rating__wrapper-item--bad" data-rate="1"></div>
+      <div class="rating__wrapper-item rating__wrapper-item--bad" data-rate="2"></div>
+      <div class="rating__wrapper-item rating__wrapper-item--bad" data-rate="3"></div>
+      <div class="rating__wrapper-item rating__wrapper-item--good" data-rate="4" onclick="openModalGoodRate()"></div>
+      <div class="rating__wrapper-item rating__wrapper-item--good" data-rate="5" onclick="openModalGoodRate()"></div>
+    </div>
+  </div>
+  <section class="rating-popup">
+    <fieldset class="rating-popup__wrapper">
+      <h6>Oops! :( Please help get better</h6>
+      <button class="rating-popup__wrapper-close" type="button" title="Закрыть модальное окно"></button>
+      <p>Leave your number and we'll contact you</p>
+      <form action="#" method="get">
+        <label for="tel">Telephone:*</label>
+        <input type="tel" id="tel" name="tel" placeholder="8 (000) 000-00-00" required="">
+        <label for="comments">Comments</label>
+        <textarea name="feedback-comments" id="comments" rows="5"></textarea>
+        <button class="rating-popup__wrapper-submit" type="submit">Send</button>
+      </form>
+    </fieldset>
+  </section>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
